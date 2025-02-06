@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha lista</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tarefas ✔</h1>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Digite a tarefa...">
+            <button onclick="addTask()">Adicionar</button>
+        </div>
+        <div class="task-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tarefa</th>
+                        <th>Prioridade</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="taskTable"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
