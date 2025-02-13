@@ -57,6 +57,19 @@ button:hover {
     background: #cc3b5e;
 }
 
+.complete-btn {
+    background: #52b788;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px; /* Adiciona um pequeno espaçamento à direita */
+}
+
+.complete-btn:hover {
+    background: #3e8e5a;
+}
 table {
     width: 100%;
     border-collapse: collapse;

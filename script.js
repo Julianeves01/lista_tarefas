@@ -1,6 +1,8 @@
 function addTask() { //adicionar nova tarefa 
     let taskInput = document.getElementById("taskInput"); //
     let taskText = taskInput.value.trim();
+    let prioritySelect = document.getElementById("prioritySelect");
+    let priority = prioritySelect.value;
 
     if (taskText === "") { //Verifica se o texto da tarefa está vazio. Se estiver, exibe um alerta e interrompe a execução da função.
         alert("Digite uma tarefa válida!");
@@ -13,8 +15,7 @@ function addTask() { //adicionar nova tarefa
     let taskCell = row.insertCell(0);
     taskCell.textContent = taskText;
 
-    let priorityCell = row.insertCell(1); // Insere uma nova célula para a prioridade, define o texto da célula como a prioridade retornada pela função
-    let priority = getPriority(taskText);
+    let priorityCell = row.insertCell(1); //Insere uma nova célula para a prioridade, define o texto da célula como a prioridade retornada pela função
     priorityCell.textContent = priority;
     priorityCell.classList.add("priority", priority.toLowerCase());
 
@@ -25,17 +26,16 @@ function addTask() { //adicionar nova tarefa
     removeButton.onclick = function() {
         table.deleteRow(row.rowIndex - 1);
     };
-    
-    actionCell.appendChild(removeButton);
-    taskInput.value = ""; //limpa p campo de entrrada de tarefa
-}
 
-function getPriority(task) { // Se o texto da tarefa contém "importante", retorna "High", Se contém "médio", retorna "Medium", Caso contrário, retorna "Low".
-    if (task.toLowerCase().includes("importante")) {
-        return "High";
-    } else if (task.toLowerCase().includes("mais ou menos")) {
-        return "Medium";
-    } else {
-        return "Low" (task.toLowerCase().includes("não muito"));    
-    }
+    const completeButton = document.createElement('button');
+    completeButton.textContent = 'Concluído';
+    completeButton.classList.add("complete-btn");
+    completeButton.onclick = function() {
+        taskCell.style.textDecoration = taskCell.style.textDecoration === 'line-through' ? 'none' : 'line-through';
+        taskCell.style.color = taskCell.style.textDecoration === 'line-through' ? '#6c757d' : '#000';
+    };
+
+    actionCell.appendChild(completeButton);
+    actionCell.appendChild(removeButton);
+    taskInput.value = ""; //limpa p campo de entrada de tarefa
 }
