@@ -39,6 +39,6 @@ O arquivo [`script.js`](script.js) contém a lógica para adicionar, marcar como
 4. Use os botões "Concluído" e "Remover" para gerenciar as tarefas na lista.
 
 ## Visualize meu Projeto!
-[Flex Grid](https://lista-tarefas-navy.vercel.app/)
+[Lista de Afazeres](https://lista-tarefas-navy.vercel.app/)
 
 ---
